@@ -1,19 +1,21 @@
 @import 'reset.scss';
 @import 'mixins';
 @import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap');
 
-html{
+html {
   border: 2px solid #270297;
 }
 
-body{
+body {
+  font-family: 'Josefin Sans', Arial, sans-serif;
   border: 2px solid #027997;
 }
 
 
-  // .App-logo {
-  //   animation: App-logo-spin infinite 20s linear;
-  // }
+// .App-logo {
+//   animation: App-logo-spin infinite 20s linear;
+// }
 
 
 // @keyframes App-logo-spin {

@@ -4,7 +4,7 @@ import '../scss/Movie.scss'
 const Movie = ({ poster }) => {
   return (
     <article className="moviePoster">
-      <img src={poster} alt="movie poster"></img>
+      <img className="poster" src={poster} alt="movie poster"></img>
     </article>
   )
 }

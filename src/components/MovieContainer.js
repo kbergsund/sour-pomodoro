@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import movieData from '../movieData'
 import Movie from './Movie'
+import '../scss/MovieContainer.scss'
 
 class MovieContainer extends Component {
   constructor() {
@@ -16,7 +17,7 @@ class MovieContainer extends Component {
     })
 
     return (
-      <main>
+      <main className="movie-container">
         {allMovies}
       </main>
     )

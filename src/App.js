@@ -1,5 +1,12 @@
 import logo from './logo.svg';
-import './App.css';
+import './scss/App.scss';
+import React from 'react';
+import MovieContainer from './components/MovieContainer';
+import Header from './components/Header';
+
+
+
+
 
 function App() {
   return (

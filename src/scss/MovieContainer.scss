@@ -1,5 +1,8 @@
 .movie-container {
+  background-color: black;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 3px;
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  grid-gap: 2em;
+  row-gap: 2em;
+  padding: 3em;
 }

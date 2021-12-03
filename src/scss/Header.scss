@@ -1,7 +1,18 @@
-
-
-.header {
-  border: 2px solid #00c72b;
-  height: 10em;
+header {
+  background:
+    linear-gradient(to bottom, transparent, black),
+    url('../tomatoes.jpeg');
+  background-size: cover;
+  filter: grayscale(60%);
+  height: 5em;
   font-size: 3em;
+  display: flex;
+  align-items: flex-end;
+}
+
+h1 {
+  height: fit-content;
+  color: rgb(235, 235, 235);
+  margin: 0 0 .2em .7em;
+  font-size: 1.2em;
 }

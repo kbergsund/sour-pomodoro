@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import movieData from '../movieData'
 import Movie from './Movie'
-import '../scss/MovieContainer.scss'
 import ClickedMovie from './ClickedMovie'
+import '../scss/MovieContainer.scss'
 
 class MovieContainer extends Component {
   constructor() {
@@ -27,7 +27,7 @@ class MovieContainer extends Component {
 
     return (
       <main className="movie-container">
-        {allMovies}
+        {!this.state.clickedMovie ? allMovies : <ClickedMovie clicked={this.state.clickedMovie} handleClick={this.handleClick}/>}
       </main>
     )
   }

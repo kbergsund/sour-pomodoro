@@ -1,27 +1,22 @@
 import React from 'react'
 
-// accept props to display the correct movie
-
-const ClickedMovie = () => {
+const ClickedMovie = ({ clicked, handleClick }) => {
   return (
     <article className="clicked-movie">
-      <img src="https://image.tmdb.org/t/p/original//zzWGRw277MNoCs3zhyG3YmYQsXv.jpg" alt="movie backdrop"></img>
-      <h2>Mulan</h2>
-      <p>Rating: 5</p>
-      <p>Release Year: 2020-09-04</p>
+      <button 
+        type="button"
+        onClick={(event) => handleClick(event)}>x</button>
+      <img src={clicked['backdrop_path']} alt="movie backdrop"></img>
+      <h2>{clicked.title}</h2>
+      <p>Rating: {clicked['average_rating']}</p>
+      <p>Release Year: {clicked['release_date']}</p>
+      <p>Overview: {clicked.overview}</p>
+      <p>Revenue: {clicked.revenue}</p>
+      <p>Budget: {clicked.budget}</p>
+      <p>Runtime: {clicked.runtime}</p>
+      <p>Tagline: {clicked.tagline}</p>
     </article>
   )
 }
 
-
-
 export default ClickedMovie;
-
-// //    {
-//   "id": 337401,
-//   "poster_path": "https://image.tmdb.org/t/p/original//aKx1ARwG55zZ0GpRvU2WrGrCG9o.jpg",
-//   "backdrop_path": "https://image.tmdb.org/t/p/original//zzWGRw277MNoCs3zhyG3YmYQsXv.jpg",
-//   "title": "Mulan",
-//   "average_rating": 4.909090909090909,
-//   "release_date": "2020-09-04"
-// }

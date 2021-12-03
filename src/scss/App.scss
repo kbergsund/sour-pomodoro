@@ -3,20 +3,18 @@
 @import 'variables';
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap');
 
-html {
-  border: 2px solid #270297;
+* {
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Josefin Sans', Arial, sans-serif;
-  border: 2px solid #027997;
+  color: rgb(235, 235, 235);
 }
-
 
 // .App-logo {
 //   animation: App-logo-spin infinite 20s linear;
 // }
-
 
 // @keyframes App-logo-spin {
 //   from {

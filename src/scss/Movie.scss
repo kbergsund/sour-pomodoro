@@ -1,8 +1,14 @@
 .poster {
   height: 300px;
-  
+  transition: transform 100ms ease-in-out;
+
   img {
     border-radius: 3px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
   }
 }
 

@@ -11,17 +11,24 @@ class MovieContainer extends Component {
     this.state = {
       movieData: '',
       clickedMovie: '',
-      isLoaded: false
+      isLoaded: false,
+      error: ''
     }
   }
 
   componentDidMount = () => {
-    fetchData('movies')
+    fetchData('movi')
     .then(data => this.setState({
       movieData : data.movies,
       isLoaded: true
     }))
-    console.log(this.state.movieData)
+    .catch(error =>  {
+      this.setState({
+      error: error.message,
+      isLoaded: false
+    })
+    console.log(this.state.error)
+  })
   }
 
   handleClick = (event) => {
@@ -31,6 +38,10 @@ class MovieContainer extends Component {
     })
   }
 
+
+  // return (
+  //   <h1>ahahaha</h1>
+  // )
   render() {
     const allMovies = !this.state.isLoaded ? <h1>Loading...</h1> : this.state.movieData.map(movie => {
       return <Movie key={movie.id} poster={movie['poster_path']} handleClick={this.handleClick} />
@@ -38,6 +49,7 @@ class MovieContainer extends Component {
 
     return (
       <main className="movie-container">
+        {this.state.error && <h1>An error occurred</h1>}
         {!this.state.clickedMovie ? allMovies : <ClickedMovie clicked={this.state.clickedMovie} handleClick={this.handleClick}/>}
       </main>
     )

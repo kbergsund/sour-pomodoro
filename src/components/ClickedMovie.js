@@ -7,7 +7,6 @@ const ClickedMovie = ({ clicked, handleClick }) => {
       <button 
         type="button"
         onClick={(event) => handleClick(event)}>x</button>
-      <img src={clicked['backdrop_path']} alt="movie backdrop"></img>
       <section className="movie-stats">
         <h2>{clicked.title}</h2>
         <p>Rating: {clicked['average_rating']}</p>
@@ -18,6 +17,7 @@ const ClickedMovie = ({ clicked, handleClick }) => {
         <p>Runtime: {clicked.runtime}</p>
         <p>Tagline: {clicked.tagline}</p>
       </section>
+      <img src={clicked['backdrop_path']} alt="movie backdrop"></img>
     </article>
   )
 }

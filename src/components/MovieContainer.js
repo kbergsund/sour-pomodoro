@@ -12,23 +12,19 @@ class MovieContainer extends Component {
       movieData: '',
       clickedMovie: '',
       isLoaded: false,
-      error: ''
+      networkErr: ''
     }
   }
 
   componentDidMount = () => {
-    fetchData('movi')
-    .then(data => this.setState({
-      movieData : data.movies,
-      isLoaded: true
-    }))
-    .catch(error =>  {
-      this.setState({
-      error: error.message,
-      isLoaded: false
-    })
-    console.log(this.state.error)
-  })
+    fetchData('movies')
+      .then(data => this.setState({
+        movieData: data.movies,
+        isLoaded: true
+      }))
+      .catch(error => this.setState({
+        networkErr: error
+      }))
   }
 
   handleClick = (event) => {
@@ -38,19 +34,25 @@ class MovieContainer extends Component {
     })
   }
 
+  handleError = () => {
+    if (this.state.networkErr.message === '500') {
+      return <h1>A server error occured, super bummer :/ Try again later</h1>
+    }
+    else {
+      return <h1>An unkwown error occured, can\'t help ya🤷‍♀️</h1>
+    }
+  }
 
-  // return (
-  //   <h1>ahahaha</h1>
-  // )
   render() {
+
     const allMovies = !this.state.isLoaded ? <h1>Loading...</h1> : this.state.movieData.map(movie => {
       return <Movie key={movie.id} poster={movie['poster_path']} handleClick={this.handleClick} />
     })
 
     return (
       <main className="movie-container">
-        {this.state.error && <h1>An error occurred</h1>}
-        {!this.state.clickedMovie ? allMovies : <ClickedMovie clicked={this.state.clickedMovie} handleClick={this.handleClick}/>}
+        {this.state.networkErr ? this.handleError() :
+          !this.state.clickedMovie ? allMovies : <ClickedMovie clicked={this.state.clickedMovie} handleClick={this.handleClick} />}
       </main>
     )
   }

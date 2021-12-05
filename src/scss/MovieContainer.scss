@@ -1,7 +1,13 @@
-.movie-container {
+main {
   background-color: black;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 2em;
   padding: 3em;
+}
+
+h2 {
+  height: 100vh;
+  font-size: 1.7em;
+  text-align: center;
 }

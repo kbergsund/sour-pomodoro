@@ -1,11 +1,52 @@
 .clicked-movie {
   text-align: center;
+  display: flex;
+  justify-content: center;
 
-  img {
-    width: 70%;
-  }
-
- .movie-stats {
+ .clicked-image {
+   width: 70%;
    text-align: left;
- }
+   height: 100vh;
+   background-size: cover;
+   background-position: center;
+   padding: 1.5em;
+  }
+}
+
+section {
+  border-radius: 10px;
+}
+
+button {
+  font-family: 'Josefin Sans';
+  height: fit-content;
+  font-size: 3.5em;
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+  margin-right: .5em;
+  transition: transform 100ms ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+}
+
+h3 {
+  font-size: 2.2em;
+  margin-bottom: .4em;
+}
+
+.movie-stats {
+  background-color: black;
+  min-height: fit-content;
+  width: 30%;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 0 10px 9px -9px rgba(0, 0, 0, .8);
+
+  p {
+    padding: .2em 0;
+  }
 }

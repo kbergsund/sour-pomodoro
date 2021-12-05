@@ -3,9 +3,7 @@ import '../scss/Movie.scss'
 
 const Movie = ({ poster, handleClick }) => {
   return (
-    <article 
-      className="moviePoster"
-      onClick={(event) => handleClick(event)}>
+    <article onClick={(event) => handleClick(event)}>
       <img
         className="poster"
         src={poster}

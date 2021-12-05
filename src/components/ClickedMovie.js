@@ -7,8 +7,10 @@ const ClickedMovie = ({ clicked, handleClick }) => {
       <button 
         type="button"
         onClick={(event) => handleClick(event)}>x</button>
-      <section className="movie-stats">
-        <h2>{clicked.title}</h2>
+      <section className="movie-stats" style={{
+        backgroundImage: `url(${clicked['backdrop_path']}`
+      }}>
+        <h3>{clicked.title}</h3>
         <p>Rating: {clicked['average_rating']}</p>
         <p>Release Year: {clicked['release_date']}</p>
         <p>Overview: {clicked.overview}</p>
@@ -17,7 +19,6 @@ const ClickedMovie = ({ clicked, handleClick }) => {
         <p>Runtime: {clicked.runtime}</p>
         <p>Tagline: {clicked.tagline}</p>
       </section>
-      <img src={clicked['backdrop_path']} alt="movie backdrop"></img>
     </article>
   )
 }

@@ -28,7 +28,7 @@ class MovieContainer extends Component {
   }
 
   handleClick = (event) => {
-    const clickedMovie = this.state.movieData.movies.find(movie => movie['poster_path'] === event.target.src)
+    const clickedMovie = this.state.movieData.find(movie => movie['poster_path'] === event.target.src)
     this.setState({
       clickedMovie: clickedMovie
     })

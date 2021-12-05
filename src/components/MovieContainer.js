@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import movieData from '../movieData'
 import Movie from './Movie'
 import ClickedMovie from './ClickedMovie'
 import '../scss/MovieContainer.scss'

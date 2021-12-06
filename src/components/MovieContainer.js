@@ -39,7 +39,7 @@ class MovieContainer extends Component {
       return <h1>A server error occured, super bummer :/ Try again later</h1>
     }
     else {
-      return <h1>An unkwown error occured, can\'t help ya🤷‍♀️</h1>
+      return <h1>An unknown error occured, can\'t help ya🤷‍♀️</h1>
     }
   }
 
@@ -52,7 +52,7 @@ class MovieContainer extends Component {
     return (
       <main className="movie-container">
         {this.state.networkErr ? this.handleError() :
-          !this.state.clickedMovie ? allMovies : <ClickedMovie clicked={this.state.clickedMovie} handleClick={this.handleClick} />}
+          !this.state.clickedMovie ? allMovies : <ClickedMovie clickedId={this.state.clickedMovie.id} handleClick={this.handleClick} handleError={this.handleError} />}
       </main>
     )
   }

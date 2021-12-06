@@ -1,28 +1,54 @@
 import React from 'react'
 import '../scss/ClickedMovie.scss'
+import fetchData from '../apiCalls'
 
-const ClickedMovie = ({ clicked, handleClick }) => {
-  return (
-    <article className="clicked-movie">
-      <button 
-        type="button"
-        onClick={(event) => handleClick(event)}>x</button>
+class ClickedMovie extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      currentMovie: null,
+      isLoaded: false,
+      clickedMovieNetworkErr: null
+    }
+  }
+
+  componentDidMount = () => {
+    fetchData(`movies/${this.props.clickedId}`)
+      .then(data => this.setState({
+        currentMovie: data.movie,
+        isLoaded: true
+      }))
+      .catch(error => this.setState({
+        clickedMovieNetworkErr: error
+      }))
+  }
+
+  render() {  
+    const displayCurrentMovie = !this.state.isLoaded ? <h1>Loading...</h1> :
       <section className="clicked-image" style={{
-        backgroundImage: `url(${clicked['backdrop_path']}`
+        backgroundImage: `url(${this.state.currentMovie['backdrop_path']}`
       }}>
         <div className="movie-stats">
-          <h3>{clicked.title}</h3>
-          <p>Rating: {clicked['average_rating']}</p>
-          <p>Release Year: {clicked['release_date']}</p>
-          <p>Overview: {clicked.overview}</p>
-          <p>Revenue: {clicked.revenue}</p>
-          <p>Budget: {clicked.budget}</p>
-          <p>Runtime: {clicked.runtime}</p>
-          <p>Tagline: {clicked.tagline}</p>
+          <h3>{this.state.currentMovie.title}</h3>
+          <p>Rating: {this.state.currentMovie['average_rating']}</p>
+          <p>Release Year: {this.state.currentMovie['release_date']}</p>
+          <p>Revenue: {this.state.currentMovie.revenue}</p>
+          <p>Budget: {this.state.currentMovie.budget}</p>
+          <p>Runtime: {this.state.currentMovie.runtime}</p>
+          <p>Tagline: {this.state.currentMovie.tagline}</p>
+          <p>Overview: {this.state.currentMovie.overview}</p>
         </div>
       </section>
-    </article>
-  )
+
+    return (
+      <article className="clicked-movie">
+        <button
+          type="button"
+          onClick={(event) => this.props.handleClick(event)}>x</button>
+        {this.state.clickedMovieNetworkErr ? this.props.handleError() : displayCurrentMovie}
+      </article>
+    )
+  }
 }
 
 export default ClickedMovie;

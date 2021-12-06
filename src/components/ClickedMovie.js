@@ -7,48 +7,51 @@ class ClickedMovie extends React.Component {
     super();
     this.state = {
       currentMovie: null,
-      isLoaded: false 
+      isLoaded: false
     }
   }
 
   componentDidMount = () => {
     console.log(this.props.clicked.id)
     fetchData(`movies/${this.props.clicked.id}`)
-    .then(data => this.setState({
-      currentMovie: data.movie,
-      isLoaded: true
-    }))
+      .then(data => this.setState({
+        currentMovie: data.movie,
+        isLoaded: true
+      }))
     // needs error handling
   }
 
   render() {
-    return (
-      <article className="clicked-movie">
-      <button 
-        type="button"
-        onClick={(event) => this.props.handleClick(event)}>x</button>
+    const displayCurrentMovie = !this.state.isLoaded ? <h1>Loading...</h1> :
       <section className="clicked-image" style={{
-        backgroundImage: `url(${this.props.clicked['backdrop_path']}`
+        backgroundImage: `url(${this.state.currentMovie['backdrop_path']}`
       }}>
         <div className="movie-stats">
-          <h3>{this.props.clicked.title}</h3>
-          <p>Rating: {this.props.clicked['average_rating']}</p>
-          <p>Release Year: {this.props.clicked['release_date']}</p>
-          <p>Overview: {this.props.clicked.overview}</p>
-          <p>Revenue: {this.props.clicked.revenue}</p>
-          <p>Budget: {this.props.clicked.budget}</p>
-          <p>Runtime: {this.props.clicked.runtime}</p>
-          <p>Tagline: {this.props.clicked.tagline}</p>
+          <h3>{this.state.currentMovie.title}</h3>
+          <p>Rating: {this.state.currentMovie['average_rating']}</p>
+          <p>Release Year: {this.state.currentMovie['release_date']}</p>
+          <p>Overview: {this.state.currentMovie.overview}</p>
+          <p>Revenue: {this.state.currentMovie.revenue}</p>
+          <p>Budget: {this.state.currentMovie.budget}</p>
+          <p>Runtime: {this.state.currentMovie.runtime}</p>
+          <p>Tagline: {this.state.currentMovie.tagline}</p>
         </div>
       </section>
-    </article>
+
+    return (
+      <article className="clicked-movie">
+        <button
+          type="button"
+          onClick={(event) => this.props.handleClick(event)}>x</button>
+        {displayCurrentMovie}
+      </article>
     )
   }
 }
 // ({ clicked, handleClick }) => {
-  // refactor to class, add componentdidmount that fetches using id from clicked prop
-  // setstate to fetched datra
-  // render the elements using new state of this component
+// refactor to class, add componentdidmount that fetches using id from clicked prop
+// setstate to fetched datra
+// render the elements using new state of this component
 
 
 //   return (

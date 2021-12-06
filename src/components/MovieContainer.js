@@ -9,7 +9,7 @@ class MovieContainer extends Component {
   constructor() {
     super()
     this.state = {
-      movieData: '',
+      movieData: null,
       clickedMovie: '',
       isLoaded: false,
       networkErr: ''
@@ -36,19 +36,21 @@ class MovieContainer extends Component {
 
   handleError = () => {
     if (this.state.networkErr.message === '500') {
-      return <h2>A server error occured, super bummer :/ Try again later</h2>
-    } else {
-      return <h2>An unkwown error occured, can\'t help ya there 🤷‍♀️</h2>
+      return <h1>A server error occured, super bummer :/ Try again later</h1>
+    }
+    else {
+      return <h1>An unkwown error occured, can\'t help ya🤷‍♀️</h1>
     }
   }
 
   render() {
-    const allMovies = !this.state.isLoaded ? <h2>Loading...</h2> : this.state.movieData.map(movie => {
+
+    const allMovies = !this.state.isLoaded ? <h1>Loading...</h1> : this.state.movieData.map(movie => {
       return <Movie key={movie.id} poster={movie['poster_path']} handleClick={this.handleClick} />
     })
 
     return (
-      <main>
+      <main className="movie-container">
         {this.state.networkErr ? this.handleError() :
           !this.state.clickedMovie ? allMovies : <ClickedMovie clicked={this.state.clickedMovie} handleClick={this.handleClick} />}
       </main>

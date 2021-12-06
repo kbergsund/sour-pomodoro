@@ -4,6 +4,7 @@
 // /movie_id.videos
 
 const fetchData = (url) => {
+  console.log(url)
   return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/${url}`)
     .then(response => {
       if (response.ok) {

@@ -22,4 +22,14 @@ describe('Homepage', () => {
     .get('img')
   });
 
+  it('should display individual movie details upon click of image', () => {
+    cy.get('main')
+    .get('article')
+    .get(':nth-child(1) > .poster')
+    .click()
+    .get('.clicked-movie')
+    .get(':nth-child(2) > .poster')
+    .should('not.exist')
+  })
+
 })

@@ -10,6 +10,15 @@ describe('Clicked movie', () => {
     expect(true).to.equal(true)
   });
 
+  it('should return to homepage upon clicking of x button', () => {
+    cy.get('main')
+    .get('button')
+    .click()
+    .get('.clicked-movie')
+    .should('not.exist')
+    .get(':nth-child(2) > .poster')
+  })
+
   it('should contain the details of the clicked movie', () => {
     cy.get('.clicked-movie')
     .get('button')

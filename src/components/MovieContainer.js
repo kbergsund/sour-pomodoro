@@ -45,7 +45,7 @@ class MovieContainer extends Component {
       <main className="movie-container">
         <Routes>
           <Route path='/' element={allMovies} />
-          <Route path='/movies/:id' element={<ClickedMovieWrapper />} />
+          <Route path='/movies/:id' element={<ClickedMovieWrapper handleError={this.handleError}/>} />
         </Routes>
         {/* {this.state.networkErr ? this.handleError() :
           !this.state.clickedMovie ? allMovies : <ClickedMovie clickedId={this.state.clickedMovie.id} handleClick={this.handleClick} handleError={this.handleError} />} */}

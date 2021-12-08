@@ -17,14 +17,19 @@ section {
   border-radius: 10px;
 }
 
+a {
+  height: fit-content;
+  position: relative;
+  margin-right: 1.2em;
+}
+
 button {
-  font-family: 'Josefin Sans';
+  font-family: 'Comfortaa', Arial, cursive;
   height: fit-content;
   font-size: 3.5em;
   background-color: transparent;
   border: 0;
   color: #fff;
-  margin-right: .5em;
   transition: transform 100ms ease-in-out;
 
   &:hover {

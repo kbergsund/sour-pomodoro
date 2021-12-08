@@ -24,6 +24,7 @@ describe('Homepage', () => {
   });
 
   it('should display the site header, containing name and background image', () => {
+    cy.url().should('eq', 'http://localhost:3000/')
     cy.get('header')
       .should('have.css', 'background')
       .and('include', 'linear-gradient')
@@ -41,10 +42,10 @@ describe('Homepage', () => {
   it('should display individual movie details upon click of image', () => {
     cy.get('main')
       .get('article')
-      .get(':nth-child(1) > .poster')
+      .get(':nth-child(1) > a > .poster')
       .click()
       .get('.clicked-movie')
-      .get(':nth-child(2) > .poster')
+      .get(':nth-child(2) > a > .poster')
       .should('not.exist')
   })
 })

@@ -1,6 +1,7 @@
 import React from 'react'
 import '../scss/ClickedMovie.scss'
 import fetchData from '../apiCalls'
+import { Link } from 'react-router-dom'
 
 class ClickedMovie extends React.Component {
   constructor() {
@@ -11,18 +12,18 @@ class ClickedMovie extends React.Component {
       clickedMovieNetworkErr: null
     }
   }
-
+  
   componentDidMount = () => {
     fetchData(`movies/${this.props.clickedId}`)
-      .then(data => this.setState({
-        currentMovie: data.movie,
-        isLoaded: true
-      }))
-      .catch(error => this.setState({
-        clickedMovieNetworkErr: error
-      }))
+    .then(data => this.setState({
+      currentMovie: data.movie,
+      isLoaded: true
+    }))
+    .catch(error => this.setState({
+      clickedMovieNetworkErr: error
+    }))
   }
-
+  
   render() {  
     const displayCurrentMovie = !this.state.isLoaded ? <h1>Loading...</h1> :
       <section className="clicked-image" style={{
@@ -42,9 +43,9 @@ class ClickedMovie extends React.Component {
 
     return (
       <article className="clicked-movie">
-        <button
-          type="button"
-          onClick={(event) => this.props.handleClick(event)}>x</button>
+        <Link to='/'> 
+          <button type="button">x</button>
+        </Link>
         {this.state.clickedMovieNetworkErr ? this.props.handleError() : displayCurrentMovie}
       </article>
     )

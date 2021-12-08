@@ -1,6 +1,18 @@
 import React from 'react'
 import '../scss/ClickedMovie.scss'
 import fetchData from '../apiCalls'
+import { Link } from 'react-router-dom'
+
+// create new functional component that then generates ClickedMovie
+//  class will be child of function
+// pass props into new wrapper component that then get passed to ClickedMovie
+
+// useParams magic:  function component to intercepts the useParams and passes the ID value as a prop to its child class component.
+
+// function ClickedMovieWrapper(props) ..... {
+//   <ClickedMovie props=
+// }
+// }
 
 class ClickedMovie extends React.Component {
   constructor() {
@@ -42,9 +54,9 @@ class ClickedMovie extends React.Component {
 
     return (
       <article className="clicked-movie">
-        <button
-          type="button"
-          onClick={(event) => this.props.handleClick(event)}>x</button>
+        <Link to='/'> 
+          <button type="button">x</button>
+        </Link>
         {this.state.clickedMovieNetworkErr ? this.props.handleError() : displayCurrentMovie}
       </article>
     )

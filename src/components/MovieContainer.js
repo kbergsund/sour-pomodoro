@@ -27,13 +27,6 @@ class MovieContainer extends Component {
       }))
   }
 
-  handleClick = (event) => {
-    const clickedMovie = this.state.movieData.find(movie => movie['poster_path'] === event.target.src)
-    this.setState({
-      clickedMovie: clickedMovie
-    })
-  }
-
   handleError = () => {
     if (this.state.networkErr.message === '500') {
       return <h1>A server error occured, super bummer :/ Try again later</h1>
@@ -45,7 +38,7 @@ class MovieContainer extends Component {
 
   render() {
     const allMovies = !this.state.isLoaded ? <h1>Loading...</h1> : this.state.movieData.map(movie => {
-      return <Movie key={movie.id} id={movie.id} poster={movie['poster_path']} handleClick={this.handleClick} />
+      return <Movie key={movie.id} id={movie.id} poster={movie['poster_path']}/>
     })
 
     return (

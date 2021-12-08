@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 const Movie = ({ id, poster }) => {
   return (
     <article>
-      {/* <article onClick={(event) => handleClick(event)}> */}
       <Link to={`/movies/${id}`}>
         <img
           className="poster"

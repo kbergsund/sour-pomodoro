@@ -37,10 +37,13 @@ describe('Clicked movie', () => {
     cy.visit('http://localhost:3000/')
     .get('main')
     .get('article')
-    .get(':nth-child(1) > .poster')
+    .get(':nth-child(1) > a > .poster')
     .click()
   })
 
+  it('should have a URL that matches the ID of the clicked movie', () => {
+    cy.url().should('include', '/movies/694919')
+  })
 
   it('should have a sample test', () => {
     expect(true).to.equal(true)
@@ -52,7 +55,7 @@ describe('Clicked movie', () => {
     .click()
     .get('.clicked-movie')
     .should('not.exist')
-    .get(':nth-child(2) > .poster')
+    .get(':nth-child(2) > a > .poster')
   })
 
   it('should contain the details of the clicked movie', () => {

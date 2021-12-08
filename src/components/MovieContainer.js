@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Movie from './Movie'
-import ClickedMovie from './ClickedMovie'
+import ClickedMovieWrapper from './ClickedMovieWrapper'
 import '../scss/MovieContainer.scss'
 import fetchData from '../apiCalls'
 import { Route, Routes } from 'react-router-dom';
@@ -45,14 +45,14 @@ class MovieContainer extends Component {
 
   render() {
     const allMovies = !this.state.isLoaded ? <h1>Loading...</h1> : this.state.movieData.map(movie => {
-      return <Movie key={movie.id} poster={movie['poster_path']} handleClick={this.handleClick} />
+      return <Movie key={movie.id} id={movie.id} poster={movie['poster_path']} handleClick={this.handleClick} />
     })
 
     return (
       <main className="movie-container">
         <Routes>
           <Route path='/' element={allMovies} />
-          <Route path='/movies/694919' element={<ClickedMovie clickedId='694919'/>} />
+          <Route path='/movies/:id' element={<ClickedMovieWrapper />} />
         </Routes>
         {/* {this.state.networkErr ? this.handleError() :
           !this.state.clickedMovie ? allMovies : <ClickedMovie clickedId={this.state.clickedMovie.id} handleClick={this.handleClick} handleError={this.handleError} />} */}

@@ -1,7 +1,7 @@
 import React from 'react'
 import '../scss/ClickedMovie.scss'
 import fetchData from '../apiCalls'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 // create new functional component that then generates ClickedMovie
 //  class will be child of function
@@ -10,7 +10,8 @@ import { Link } from 'react-router-dom'
 // useParams magic:  function component to intercepts the useParams and passes the ID value as a prop to its child class component.
 
 // function ClickedMovieWrapper(props) ..... {
-//   <ClickedMovie props=
+  // const clickedParams = useParams.id
+//   <ClickedMovie props=clickedParams
 // }
 // }
 
@@ -23,18 +24,18 @@ class ClickedMovie extends React.Component {
       clickedMovieNetworkErr: null
     }
   }
-
+  
   componentDidMount = () => {
     fetchData(`movies/${this.props.clickedId}`)
-      .then(data => this.setState({
-        currentMovie: data.movie,
-        isLoaded: true
-      }))
-      .catch(error => this.setState({
-        clickedMovieNetworkErr: error
-      }))
+    .then(data => this.setState({
+      currentMovie: data.movie,
+      isLoaded: true
+    }))
+    .catch(error => this.setState({
+      clickedMovieNetworkErr: error
+    }))
   }
-
+  
   render() {  
     const displayCurrentMovie = !this.state.isLoaded ? <h1>Loading...</h1> :
       <section className="clicked-image" style={{

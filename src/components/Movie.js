@@ -2,7 +2,7 @@ import React from 'react'
 import '../scss/Movie.scss'
 import { Link } from 'react-router-dom';
 
-const Movie = (key, { poster, handleClick }) => {
+const Movie = ({ poster }) => {
   return (
     <article>
       {/* <article onClick={(event) => handleClick(event)}> */}

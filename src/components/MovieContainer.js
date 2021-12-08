@@ -10,7 +10,6 @@ class MovieContainer extends Component {
     super()
     this.state = {
       movieData: null,
-      clickedMovie: '',
       isLoaded: false,
       networkErr: ''
     }
@@ -29,15 +28,16 @@ class MovieContainer extends Component {
 
   handleError = () => {
     if (this.state.networkErr.message === '500') {
-      return <h1>A server error occured, super bummer :/ Try again later</h1>
+      return <h1>A server error occured, super bummer. 😕 Try again later.</h1>
     }
     else {
-      return <h1>An unknown error occured, can\'t help ya🤷‍♀️</h1>
+      return <h1>An unknown error occured, can't help ya there 🤷‍♀️</h1>
     }
   }
 
   render() {
-    const allMovies = !this.state.isLoaded ? <h1>Loading...</h1> : this.state.movieData.map(movie => {
+    const allMovies = this.state.networkErr ? this.handleError() :
+    !this.state.isLoaded ? <h1>Loading...</h1> : this.state.movieData.map(movie => {
       return <Movie key={movie.id} id={movie.id} poster={movie['poster_path']}/>
     })
 

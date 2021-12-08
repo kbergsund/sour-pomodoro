@@ -42,6 +42,7 @@ describe('Clicked movie', () => {
   })
 
   it('should have a URL that matches the ID of the clicked movie', () => {
+    cy.url().should('eq', 'http://localhost:3000/movies/694919')
     cy.url().should('include', '/movies/694919')
   })
 

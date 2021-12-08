@@ -24,6 +24,7 @@ describe('Homepage', () => {
   });
 
   it('should display the site header, containing name and background image', () => {
+    cy.url().should('eq', 'http://localhost:3000/')
     cy.get('header')
       .should('have.css', 'background')
       .and('include', 'linear-gradient')

@@ -44,11 +44,10 @@ class MovieContainer extends Component {
     return (
       <main className="movie-container">
         <Routes>
+          <Route path='/:invalidURL' element={<p>Uhh, u lost? 404 - Invalid URL</p>} />
           <Route path='/' element={allMovies} />
           <Route path='/movies/:id' element={<ClickedMovieWrapper handleError={this.handleError}/>} />
         </Routes>
-        {/* {this.state.networkErr ? this.handleError() :
-          !this.state.clickedMovie ? allMovies : <ClickedMovie clickedId={this.state.clickedMovie.id} handleClick={this.handleClick} handleError={this.handleError} />} */}
       </main>
     )
   }

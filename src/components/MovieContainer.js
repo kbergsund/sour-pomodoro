@@ -16,7 +16,7 @@ class MovieContainer extends Component {
   }
 
   componentDidMount = () => {
-    fetchData('moies')
+    fetchData('movies')
       .then(data => this.setState({
         movieData: data.movies,
         isLoaded: true

@@ -76,4 +76,10 @@ describe('Clicked movie', () => {
     .next().contains('Tagline:')
     .next().contains("Overview: A professional thief with $40 million in debt and his family's life on the line must commit one final heist - rob a futuristic airborne casino filled with the world's most dangerous criminals.")
   })
+  it('should be able to display a variety of error messages', () => {
+    cy.visit('http://localhost:3000/movies/banana')
+    .get('.movie-container')
+    .get('.clicked-movie')
+    .contains('h1', 'An unknown error occured, can\'t help ya there 🤷‍♀️')
+  })
 })

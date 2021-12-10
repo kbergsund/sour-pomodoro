@@ -33,13 +33,10 @@ class MovieContainer extends Component {
     if (error.message === '500') {
       return <h1>A server error occured, super bummer. 😕 Try again later.</h1>
     } 
-    // else if (error.message === '404') {
-    //   return <p>Uhh, u lost? 404 - Invalid URL</p>
-    // }
-    
-    // issue: invalid movies/bananas URL throws 500 level error. Even though user is typing in wrong thing
-    // above code solves for that but then dev-side fetch error ('moies') throws 404 as well. Is this something we have to solve for, knowing that in production environment this sad path will not happen?
-    else {
+    else if (error.message === '404') {
+      //add button that links to home?
+      return <p>Uhh, u lost? 404 - Invalid URL</p>
+    } else {
       return <h1>An unknown error occured, can't help ya there 🤷‍♀️</h1>
     }
   }

@@ -5,7 +5,7 @@ import '../scss/MovieContainer.scss'
 import fetchData from '../apiCalls'
 import { Link, Route, Routes } from 'react-router-dom';
 import { FulfillingBouncingCircleSpinner } from 'react-epic-spinners'
-import { Fragment } from 'react/cjs/react.production.min'
+import ErrorPage from "./ErrorPage";
 
 class MovieContainer extends Component {
   constructor() {
@@ -37,7 +37,8 @@ class MovieContainer extends Component {
     }
     else if (error.message === '404') {
       return <>
-        <p>Uhh, u lost? 404 - Invalid URL</p>
+      <ErrorPage />
+        <p>Whoa...kinda spooky in here.</p>
         <Link to='/' >
           <p>Take me home🥺</p>
         </Link>

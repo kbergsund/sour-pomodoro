@@ -19,13 +19,14 @@ class ClickedMovie extends React.Component {
       currentMovie: data.movie,
       isLoaded: true
     }))
-    .catch(error => this.setState({
-      clickedMovieNetworkErr: error
+    .catch(error => error.message === '500' && 
+      this.setState({
+      clickedMovieNetworkErr: new Error('404')
     }))
   }
   
   render() {  
-    const displayCurrentMovie = !this.state.isLoaded ? <h1>Loading...</h1> :
+    const displayCurrentMovie = this.state.clickedMovieNetworkErr ? this.props.handleError(this.state.clickedMovieNetworkErr) : !this.state.isLoaded ? <h1>Loading...</h1> :
       <section className="clicked-image" style={{
         backgroundImage: `url(${this.state.currentMovie['backdrop_path']}`
       }}>
@@ -46,7 +47,7 @@ class ClickedMovie extends React.Component {
         <Link to='/'> 
           <button type="button">x</button>
         </Link>
-        {this.state.clickedMovieNetworkErr ? this.props.handleError() : displayCurrentMovie}
+        {displayCurrentMovie}
       </article>
     )
   }

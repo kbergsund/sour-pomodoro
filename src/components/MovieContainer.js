@@ -3,7 +3,7 @@ import Movie from './Movie'
 import ClickedMovieWrapper from './ClickedMovieWrapper'
 import '../scss/MovieContainer.scss'
 import fetchData from '../apiCalls'
-import { Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 import { FulfillingBouncingCircleSpinner } from 'react-epic-spinners'
 import { Fragment } from 'react/cjs/react.production.min'
 
@@ -18,10 +18,10 @@ class MovieContainer extends Component {
   }
 
   componentDidMount = () => {
-    fetchData('movies')
+    fetchData('movs')
       .then(data => this.setState({
         movieData: data.movies,
-        isLoaded: false
+        isLoaded: true
       }))
       .catch(error => {
         console.log(error)
@@ -36,8 +36,12 @@ class MovieContainer extends Component {
       return <h1>A server error occured, super bummer. 😕 Try again later.</h1>
     }
     else if (error.message === '404') {
-      //add button that links to home?
-      return <p>Uhh, u lost? 404 - Invalid URL</p>
+      return <>
+        <p>Uhh, u lost? 404 - Invalid URL</p>
+        <Link to='/' >
+          <p>Take me home🥺</p>
+        </Link>
+      </>
     } else {
       return <h1>An unknown error occured, can't help ya there 🤷‍♀️</h1>
     }
@@ -46,12 +50,14 @@ class MovieContainer extends Component {
   render() {
     const allMovies = this.state.networkErr ? this.handleError(this.state.networkErr) :
       !this.state.isLoaded ?
-        <FulfillingBouncingCircleSpinner
-          className="loading-spinner"
-          color="#942700"
-          size="300"
-          background-color="white"
-        />
+        <h1> Loading...beep boop...uh...beep
+          <FulfillingBouncingCircleSpinner
+            className="loading-spinner"
+            color="#942700"
+            size="200"
+            background-color="white"
+          />
+        </h1>
         : this.state.movieData.map(movie => {
           return <Movie key={movie.id} id={movie.id} poster={movie['poster_path']} />
         })

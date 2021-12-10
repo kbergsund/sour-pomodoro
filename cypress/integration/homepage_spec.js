@@ -12,7 +12,7 @@ describe('Homepage', () => {
             {
               id: 337401,
               poster_path: "https://image.tmdb.org/t/p/original//aKx1ARwG55zZ0GpRvU2WrGrCG9o.jpg"
-              }
+            }
           ]
       }
     })
@@ -49,3 +49,4 @@ describe('Homepage', () => {
       .should('not.exist')
   })
 })
+  

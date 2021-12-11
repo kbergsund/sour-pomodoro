@@ -1,32 +1,38 @@
-.image-container {
-  display:flex;
-  border: 2px solid white;
-}
 
-.theater-img {
-  border: 1px solid white;
-  height: fit-content;
+// .theater-img {
+//   border: 1px solid white;
+//   height: fit-content;
+//   width: auto;
+// }
+
+
+.container {
+  position: relative;
   width: auto;
+  margin: auto;
 }
 
-/* Top left text */
-// .invalid {
-//   position: absolute;
-//   top: 8px;
-//   left: 16px;
-// }
+/* Bottom right text */
+.text-block {
+  position: absolute;
+  bottom: 25em;
+  right: 15em;
+  padding-left: 26px;
+  padding-right: 20px;
+  text-align: center;
+  // border: 2px solid white;
+}
 
-// /* Centered text */
-// .spooky {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-// }
+.invalid{
+  font-size: 1.9em;
+}
 
-// .link {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-// }
+.spooky{
+  font-size: 1.5em;
+  margin: 1em 0 0 0;
+}
+
+.link{
+  font-size: 1.3em;
+  margin: 1em 0 0 0;
+}

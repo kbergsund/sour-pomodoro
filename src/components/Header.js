@@ -1,10 +1,13 @@
 import React from 'react'
 import '../scss/Header.scss'
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <header>
+      <Link style={{textDecoration: "none", color:"white"}} to="/">
       <h1>sour pomodoro</h1>
+      </Link>
     </header>
   )
 }

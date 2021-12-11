@@ -18,7 +18,7 @@ class MovieContainer extends Component {
   }
 
   componentDidMount = () => {
-    fetchData('movs')
+    fetchData('mov')
       .then(data => this.setState({
         movieData: data.movies,
         isLoaded: true
@@ -38,10 +38,10 @@ class MovieContainer extends Component {
     else if (error.message === '404') {
       return <>
       <ErrorPage />
-        <p>Whoa...kinda spooky in here.</p>
+        {/* <p>Whoa...kinda spooky in here.</p>
         <Link to='/' >
           <p>Take me home🥺</p>
-        </Link>
+        </Link> */}
       </>
     } else {
       return <h1>An unknown error occured, can't help ya there 🤷‍♀️</h1>

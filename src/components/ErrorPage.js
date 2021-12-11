@@ -12,7 +12,7 @@ const ErrorPage = () => {
         alt="an empty movie theater">
       </img>
       <div className="text-block">
-        <h1 className="invalid">404-invalid URL</h1>
+        <h1 className="invalid">404-Invalid URL</h1>
         <p className="spooky">Whoa...kinda spooky in here</p>
         <Link to="/">
           <p className="link"> Get me outta here!</p>

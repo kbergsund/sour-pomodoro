@@ -4,6 +4,7 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 2em;
   padding: 3em;
+  min-height: 100vh;
 }
 
 h2 {
@@ -12,7 +13,12 @@ h2 {
   text-align: center;
 }
 
-.loading-spinner{
-  border: 1px solid yellow;
-  text-align: center;
+.loading {
+  display: flex;
+  justify-content: center;
+  height: 10em;
+}
+
+.loading-spinner {
+  margin: 2em 4.7em;
 }

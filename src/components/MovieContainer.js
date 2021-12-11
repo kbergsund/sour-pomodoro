@@ -97,7 +97,7 @@ class MovieContainer extends Component {
         <Sort sortMovies={this.sortMovies}/>
         <div className="movie-grid">
           <Routes>
-            <Route path='/:invalidURL' element={<p>Uhh, u lost? 404 - Invalid URL</p>} />
+            <Route path='/:invalidURL' element={<ErrorPage />} />
             <Route path='/' element={allMovies} />
             <Route path='/movies/:id' element={<ClickedMovieWrapper handleError={this.handleError} />} />
           </Routes>

@@ -1,0 +1,36 @@
+.container {
+  position: relative;
+  width: auto;
+  margin: auto;
+}
+
+.theater-img {
+  border: 1px solid white;
+  height: fit-content;
+  width: auto;
+}
+
+/* Bottom right text */
+.text-block {
+  position: absolute;
+  bottom: 25em;
+  right: 15em;
+  padding-left: 26px;
+  padding-right: 20px;
+  text-align: center;
+  // border: 2px solid white;
+}
+
+.invalid{
+  font-size: 1.9em;
+}
+
+.spooky{
+  font-size: 1.5em;
+  margin: 1em 0 0 0;
+}
+
+.link{
+  font-size: 1.3em;
+  margin: 1em 0 0 0;
+}

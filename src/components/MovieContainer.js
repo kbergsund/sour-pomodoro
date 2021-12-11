@@ -49,18 +49,32 @@ class MovieContainer extends Component {
   }
 
   sortMovies = (sortBy) => {
-    this.setState({
-      movieData: this.state.movieData.sort((a, b) => {
-        if (a[sortBy] < b[sortBy]) {
-          return -1
-        } else if (a[sortBy] > b[sortBy]) {
-          return 1
-        } else {
-          return 0
-        }
-        // typeof(sortBy) !== 'string' ? a[sortBy] - b[sortBy] :   
+    if (!sortBy.includes('2')) {
+      this.setState({
+        movieData: this.state.movieData.sort((a, b) => {
+          if (a[sortBy] < b[sortBy]) {
+            return -1
+          } else if (a[sortBy] > b[sortBy]) {
+            return 1
+          } else {
+            return 0
+          } 
+        })
       })
-    })
+    } else {
+      const sortType = sortBy.slice(0, sortBy.length - 1)
+      this.setState({
+        movieData: this.state.movieData.sort((a, b) => {
+          if (a[sortType] > b[sortType]) {
+            return -1
+          } else if (a[sortType] < b[sortType]) {
+            return 1
+          } else {
+            return 0
+          } 
+        })
+      })
+    }
   }
 
   render() {

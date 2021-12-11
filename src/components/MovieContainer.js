@@ -6,6 +6,8 @@ import fetchData from '../apiCalls'
 import { Link, Route, Routes } from 'react-router-dom';
 import { FulfillingBouncingCircleSpinner } from 'react-epic-spinners'
 import ErrorPage from "./ErrorPage";
+import Sort from './Sort'
+
 
 class MovieContainer extends Component {
   constructor() {
@@ -46,6 +48,35 @@ class MovieContainer extends Component {
     }
   }
 
+  sortMovies = (sortBy) => {
+    if (!sortBy.includes('2')) {
+      this.setState({
+        movieData: this.state.movieData.sort((a, b) => {
+          if (a[sortBy] < b[sortBy]) {
+            return -1
+          } else if (a[sortBy] > b[sortBy]) {
+            return 1
+          } else {
+            return 0
+          } 
+        })
+      })
+    } else {
+      const sortType = sortBy.slice(0, sortBy.length - 1)
+      this.setState({
+        movieData: this.state.movieData.sort((a, b) => {
+          if (a[sortType] > b[sortType]) {
+            return -1
+          } else if (a[sortType] < b[sortType]) {
+            return 1
+          } else {
+            return 0
+          } 
+        })
+      })
+    }
+  }
+
   render() {
     const allMovies = this.state.networkErr ? this.handleError(this.state.networkErr) :
       !this.state.isLoaded ?
@@ -63,11 +94,14 @@ class MovieContainer extends Component {
 
     return (
       <main className="movie-container">
-        <Routes>
-          <Route path='/:invalidURL' element={<p>Uhh, u lost? 404 - Invalid URL</p>} />
-          <Route path='/' element={allMovies} />
-          <Route path='/movies/:id' element={<ClickedMovieWrapper handleError={this.handleError} />} />
-        </Routes>
+        <Sort sortMovies={this.sortMovies}/>
+        <div className="movie-grid">
+          <Routes>
+            <Route path='/:invalidURL' element={<p>Uhh, u lost? 404 - Invalid URL</p>} />
+            <Route path='/' element={allMovies} />
+            <Route path='/movies/:id' element={<ClickedMovieWrapper handleError={this.handleError} />} />
+          </Routes>
+        </div>
       </main>
     )
   }

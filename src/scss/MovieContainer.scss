@@ -1,10 +1,13 @@
 main {
   background-color: black;
+  padding: 3em;
+  min-height: 100vh;
+}
+
+.movie-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 2em;
-  padding: 3em;
-  min-height: 100vh;
 }
 
 h2 {

@@ -18,10 +18,10 @@ class MovieContainer extends Component {
   }
 
   componentDidMount = () => {
-    fetchData('mov')
+    fetchData('movies')
       .then(data => this.setState({
         movieData: data.movies,
-        isLoaded: true
+        isLoaded: false
       }))
       .catch(error => {
         console.log(error)
@@ -38,10 +38,6 @@ class MovieContainer extends Component {
     else if (error.message === '404') {
       return <>
       <ErrorPage />
-        {/* <p>Whoa...kinda spooky in here.</p>
-        <Link to='/' >
-          <p>Take me home🥺</p>
-        </Link> */}
       </>
     } else {
       return <h1>An unknown error occured, can't help ya there 🤷‍♀️</h1>
@@ -51,9 +47,9 @@ class MovieContainer extends Component {
   render() {
     const allMovies = this.state.networkErr ? this.handleError(this.state.networkErr) :
       !this.state.isLoaded ?
-        <h1> Loading...beep boop...uh...beep
+        <h1 className="loading-spinner"> Loading...beep boop...uh...beep
           <FulfillingBouncingCircleSpinner
-            className="loading-spinner"
+            
             color="#942700"
             size="200"
             background-color="white"

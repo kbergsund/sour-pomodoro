@@ -11,7 +11,7 @@ class MovieContainer extends Component {
   constructor() {
     super()
     this.state = {
-      movieData: null,
+      movieData: [],
       isLoaded: false,
       networkErr: ''
     }
@@ -19,10 +19,12 @@ class MovieContainer extends Component {
 
   componentDidMount = () => {
     fetchData('movies')
-      .then(data => this.setState({
+      .then(data => setTimeout(() => {
+        this.setState({
         movieData: data.movies,
-        isLoaded: false
-      }))
+        isLoaded: true
+        })
+      }, 1000))
       .catch(error => {
         console.log(error)
         this.setState({
@@ -33,28 +35,28 @@ class MovieContainer extends Component {
 
   handleError = (error) => {
     if (error.message === '500') {
-      return <h1>A server error occured, super bummer. 😕 Try again later.</h1>
+      return <h2>A server error occured, super bummer. 😕 Try again later.</h2>
     }
     else if (error.message === '404') {
       return <>
       <ErrorPage />
       </>
     } else {
-      return <h1>An unknown error occured, can't help ya there 🤷‍♀️</h1>
+      return <h2>An unknown error occured, can't help ya there 🤷‍♀️</h2>
     }
   }
 
   render() {
     const allMovies = this.state.networkErr ? this.handleError(this.state.networkErr) :
       !this.state.isLoaded ?
-        <h1 className="loading-spinner"> Loading...beep boop...uh...beep
-          <FulfillingBouncingCircleSpinner
-            
+      <div className="loading">
+        <p>Loading...beep boop...uh...beep
+          <FulfillingBouncingCircleSpinner 
+            className="loading-spinner"
             color="#942700"
-            size="200"
-            background-color="white"
           />
-        </h1>
+        </p>
+      </div>
         : this.state.movieData.map(movie => {
           return <Movie key={movie.id} id={movie.id} poster={movie['poster_path']} />
         })

@@ -89,7 +89,7 @@ class MovieContainer extends Component {
         </p>
       </div>
         : this.state.movieData.map(movie => {
-          return <Movie key={movie.id} id={movie.id} poster={movie['poster_path']} />
+          return <Movie key={movie.id} id={movie.id} poster={movie['poster_path']} rating={movie['average_rating']} />
         })
 
     return (

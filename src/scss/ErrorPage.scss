@@ -5,32 +5,32 @@
 }
 
 .theater-img {
-  height: fit-content;
-  width: 100%;
+  position: relative;
+  height: auto;
+  max-width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Bottom right text */
 .text-block {
-  position: absolute;
-  bottom: 25em;
-  right: 15em;
-  padding-left: 26px;
-  padding-right: 20px;
+  position: relative;
+  bottom: 60%;
   text-align: center;
   width: 100%;
-  // border: 2px solid white;
 }
 
 .invalid{
-  font-size: 1.9em;
+  font-size: 3vw;
 }
 
 .spooky{
-  font-size: 1.5em;
+  font-size: 2vw;
   margin: 1em 0 0 0;
 }
 
 .link{
-  font-size: 1.3em;
+  font-size: 2vw;
   margin: 1em 0 0 0;
 }

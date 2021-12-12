@@ -3,6 +3,17 @@ main {
   padding: 3em;
   min-height: 100vh;
 }
+select {
+  background: transparent;
+  width: 15em;
+  padding: 2px;
+  font-family: 'Comfortaa', sans-serif;
+  color: #fff;
+  border: 0;
+  border-radius: 0;
+  height: 22px;
+  border: 2px solid yellow;
+}
 
 .movie-grid {
   display: grid;
@@ -21,7 +32,10 @@ h2 {
   justify-content: center;
   height: 10em;
 }
-
 .loading-spinner {
   margin: 2em 4.7em;
+}
+.sort-container{
+  margin: 0;
+  position: relative;
 }

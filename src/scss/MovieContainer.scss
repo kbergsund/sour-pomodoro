@@ -4,9 +4,8 @@ main {
   min-height: 100vh;
 }
 select {
-  appearance: none;
   background: transparent;
-  width: 170px;
+  width: 15em;
   padding: 2px;
   font-family: 'Comfortaa', sans-serif;
   color: #fff;
@@ -39,5 +38,4 @@ h2 {
 .sort-container{
   margin: 0;
   position: relative;
-  border: 10px solid blue;
 }

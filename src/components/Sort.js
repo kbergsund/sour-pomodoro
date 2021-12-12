@@ -1,4 +1,11 @@
+import React from 'react'
+import { useLocation} from 'react-router-dom'
+
+
 const Sort = ({ sortMovies }) => {
+  const location = useLocation()
+  console.log(location)
+  if(location.pathname == '/'){
   return (
     <span className="sort-container">
       <select onChange={(e) => sortMovies(e.target.value)}>
@@ -11,7 +18,11 @@ const Sort = ({ sortMovies }) => {
         <option value="release_date2">New-Old</option>
       </select>
     </span>
-  )
+  ) } else {
+    return (
+      null
+    )
+  }
 }
 
 export default Sort;

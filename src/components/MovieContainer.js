@@ -20,7 +20,7 @@ class MovieContainer extends Component {
   }
 
   componentDidMount = () => {
-    fetchData('movies')
+    fetchData('movs')
       .then(data => setTimeout(() => {
         this.setState({
         movieData: data.movies,

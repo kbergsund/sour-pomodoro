@@ -1,13 +1,12 @@
 .container {
   position: relative;
-  width: auto;
-  margin: auto;
+  width: 100%;
+  display: block;
 }
 
 .theater-img {
-  border: 1px solid white;
   height: fit-content;
-  width: auto;
+  width: 100%;
 }
 
 /* Bottom right text */
@@ -18,6 +17,7 @@
   padding-left: 26px;
   padding-right: 20px;
   text-align: center;
+  width: 100%;
   // border: 2px solid white;
 }
 

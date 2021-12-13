@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/sour-pomodoros/static/css/main.b3d57c55.chunk.css",
+    "main.js": "/sour-pomodoros/static/js/main.010193c5.chunk.js",
+    "main.js.map": "/sour-pomodoros/static/js/main.010193c5.chunk.js.map",
+    "runtime-main.js": "/sour-pomodoros/static/js/runtime-main.d247ebc4.js",
+    "runtime-main.js.map": "/sour-pomodoros/static/js/runtime-main.d247ebc4.js.map",
+    "static/js/2.a8ab1cd7.chunk.js": "/sour-pomodoros/static/js/2.a8ab1cd7.chunk.js",
+    "static/js/2.a8ab1cd7.chunk.js.map": "/sour-pomodoros/static/js/2.a8ab1cd7.chunk.js.map",
+    "index.html": "/sour-pomodoros/index.html",
+    "static/css/main.b3d57c55.chunk.css.map": "/sour-pomodoros/static/css/main.b3d57c55.chunk.css.map",
+    "static/js/2.a8ab1cd7.chunk.js.LICENSE.txt": "/sour-pomodoros/static/js/2.a8ab1cd7.chunk.js.LICENSE.txt",
+    "static/media/Header.scss": "/sour-pomodoros/static/media/tomatoes.ea601dbd.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d247ebc4.js",
+    "static/js/2.a8ab1cd7.chunk.js",
+    "static/css/main.b3d57c55.chunk.css",
+    "static/js/main.010193c5.chunk.js"
+  ]
+}

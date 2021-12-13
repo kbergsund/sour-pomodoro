@@ -2,9 +2,9 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 import '../scss/Sort.scss'
 
-const Sort = ({ sortMovies }) => {
+const Sort = ({ sortMovies, error }) => {
   const location = useLocation()
-  if (location.pathname === '/') {
+  if (location.pathname === '/' && !error) {
     return (
       <select onChange={(e) => sortMovies(e.target.value)}>
         <option hidden>Sort By</option>
@@ -24,4 +24,3 @@ const Sort = ({ sortMovies }) => {
 }
 
 export default Sort;
-    // <select onChange={(e) => sortMovies(e.target.value)}>

@@ -46,7 +46,7 @@ class ClickedMovie extends React.Component {
           <div className="movie-stats">
             <h3>{this.state.currentMovie.title}</h3>
             <p>Rating: {Math.round(this.state.currentMovie['average_rating'] * 10) / 10}/10</p>
-            <p>Release Year: {new Date(this.state.currentMovie['release_date']).toLocaleDateString()}</p>
+            <p>Release Year: {new Date(this.state.currentMovie['release_date']).toLocaleDateString('en-US', {timeZone: 'UTC'})}</p>
             <p>Revenue: {this.handleUnavailableData(this.state.currentMovie.revenue)}</p>
             <p>Budget: {this.handleUnavailableData(this.state.currentMovie.budget)}</p>
             <p>Runtime: {this.state.currentMovie.runtime} minutes</p>

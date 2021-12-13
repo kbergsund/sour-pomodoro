@@ -3,7 +3,7 @@ import Movie from './Movie'
 import ClickedMovieWrapper from './ClickedMovieWrapper'
 import '../scss/MovieContainer.scss'
 import fetchData from '../apiCalls'
-import { Link, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { FulfillingBouncingCircleSpinner } from 'react-epic-spinners'
 import ErrorPage from "./ErrorPage";
 import Sort from './Sort'
@@ -46,31 +46,33 @@ class MovieContainer extends Component {
   }
 
   sortMovies = (sortBy) => {
-    if (!sortBy.includes('2')) {
-      this.setState({
-        movieData: this.state.movieData.sort((a, b) => {
-          if (a[sortBy] < b[sortBy]) {
-            return -1
-          } else if (a[sortBy] > b[sortBy]) {
-            return 1
-          } else {
-            return 0
-          }
+    if (this.state.movieData) {
+      if (!sortBy.includes('2')) {
+        this.setState({
+          movieData: this.state.movieData.sort((a, b) => {
+            if (a[sortBy] < b[sortBy]) {
+              return -1
+            } else if (a[sortBy] > b[sortBy]) {
+              return 1
+            } else {
+              return 0
+            }
+          })
         })
-      })
-    } else {
-      const sortType = sortBy.slice(0, sortBy.length - 1)
-      this.setState({
-        movieData: this.state.movieData.sort((a, b) => {
-          if (a[sortType] > b[sortType]) {
-            return -1
-          } else if (a[sortType] < b[sortType]) {
-            return 1
-          } else {
-            return 0
-          }
+      } else {
+        const sortType = sortBy.slice(0, sortBy.length - 1)
+        this.setState({
+          movieData: this.state.movieData.sort((a, b) => {
+            if (a[sortType] > b[sortType]) {
+              return -1
+            } else if (a[sortType] < b[sortType]) {
+              return 1
+            } else {
+              return 0
+            }
+          })
         })
-      })
+      }
     }
   }
 
@@ -87,7 +89,7 @@ class MovieContainer extends Component {
 
     return (
       <main className="movie-container">
-        <Sort className="sort-container"
+        <Sort className="sort-container" error={this.state.networkErr}
           sortMovies={this.sortMovies} />
         <div className="movie-grid">
           <Routes>

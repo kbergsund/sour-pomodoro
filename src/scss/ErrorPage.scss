@@ -1,7 +1,7 @@
 .error-container {
   background-image: url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
   background-size: cover;
-  background-position-y: -200px;
+  background-position-y: -250px;
   background-position-x: center;
   height: 80vh;
   width: 100%;
@@ -22,7 +22,7 @@ h2 {
   color: #942700;
   padding: .5em;
   border-radius: 7px;
-  font-size: 2vw;
+  font-size: 1.5em;
 
   &:hover {
     border: 1px solid #942700;

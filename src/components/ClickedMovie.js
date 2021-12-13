@@ -9,7 +9,6 @@ class ClickedMovie extends React.Component {
     super();
     this.state = {
       currentMovie: null,
-      // isLoaded: false,
       clickedMovieNetworkErr: null
     }
   }
@@ -18,7 +17,6 @@ class ClickedMovie extends React.Component {
     fetchData(`movies/${this.props.clickedId}`)
       .then(data => this.setState({
         currentMovie: data.movie,
-        // isLoaded: true
       }))
       .catch(error => error.message === '500' &&
         this.setState({

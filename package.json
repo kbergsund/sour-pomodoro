@@ -1,6 +1,6 @@
 {
   "name": "sour-pomodoros",
-  "homepage": "https://kbergsund.github.io/sour-pomodoros/",
+  "homepage": "https://kbergsund.github.io/sour-pomodoro/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

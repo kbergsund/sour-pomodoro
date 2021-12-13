@@ -1,4 +1,4 @@
-# [sour pomodoro](https://kbergsund.github.io/sour-pomodoros/) 
+# [sour pomodoro](https://kbergsund.github.io/sour-pomodoro/) 
 (It's Definitely Not Rotten Tomatoes...)
 
  ## A Front End Engineering Project by: 
@@ -31,7 +31,7 @@
 
 
 ## Install & Setup
-* Visit deployed site [here](https://kbergsund.github.io/sour-pomodoros/)
+* Visit deployed site [here](https://kbergsund.github.io/sour-pomodoro/)
 Or:
 1. Clone this down
 2. `cd` into the directory

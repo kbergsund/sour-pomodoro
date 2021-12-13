@@ -13,8 +13,7 @@ class MovieContainer extends Component {
   constructor() {
     super()
     this.state = {
-      movieData: [],
-      isLoaded: false,
+      movieData: null,
       networkErr: ''
     }
   }
@@ -23,12 +22,10 @@ class MovieContainer extends Component {
     fetchData('movies')
       .then(data => setTimeout(() => {
         this.setState({
-        movieData: data.movies,
-        isLoaded: true
+          movieData: data.movies,
         })
-      }, 1000))
+      }, 500))
       .catch(error => {
-        console.log(error)
         this.setState({
           networkErr: error
         })
@@ -41,7 +38,7 @@ class MovieContainer extends Component {
     }
     else if (error.message === '404') {
       return <>
-      <ErrorPage />
+        <ErrorPage />
       </>
     } else {
       return <h2>An unknown error occured, can't help ya there 🤷‍♀️</h2>
@@ -58,7 +55,7 @@ class MovieContainer extends Component {
             return 1
           } else {
             return 0
-          } 
+          }
         })
       })
     } else {
@@ -71,7 +68,7 @@ class MovieContainer extends Component {
             return 1
           } else {
             return 0
-          } 
+          }
         })
       })
     }
@@ -79,22 +76,19 @@ class MovieContainer extends Component {
 
   render() {
     const allMovies = this.state.networkErr ? this.handleError(this.state.networkErr) :
-      !this.state.isLoaded ?
-      <div className="loading">
-        <p>Loading...beep boop...uh...beep
-          <FulfillingBouncingCircleSpinner 
-            className="loading-spinner"
-            color="#942700"
-          />
-        </p>
-      </div>
+      !this.state.movieData ?
+        <div className="loading">
+          <p>Loading...beep boop...uh...beep</p>
+          <FulfillingBouncingCircleSpinner color="#942700" />
+        </div>
         : this.state.movieData.map(movie => {
           return <Movie key={movie.id} id={movie.id} poster={movie['poster_path']} rating={movie['average_rating']} />
         })
 
     return (
       <main className="movie-container">
-        <Sort sortMovies={this.sortMovies}/>
+        <Sort className="sort-container"
+          sortMovies={this.sortMovies} />
         <div className="movie-grid">
           <Routes>
             <Route path='/:invalidURL' element={<ErrorPage />} />

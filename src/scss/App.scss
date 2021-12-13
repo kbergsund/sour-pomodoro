@@ -5,11 +5,11 @@
 
 * {
   box-sizing: border-box;
+  border: 0;
 }
 
 body {
-  font-family: 'Comfortaa', Arial, cursive;
-  // font-size: 16px;
-  color: rgb(235, 235, 235);
+  font-family: $font;
+  color: $text-color;
   min-height: 100vh;
 }

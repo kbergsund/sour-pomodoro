@@ -1,58 +1,55 @@
+@import 'variables';
+
 .clicked-movie {
-  text-align: center;
   display: flex;
   justify-content: center;
-
- .clicked-image {
-   width: 70%;
-   text-align: left;
-   height: 100vh;
-   background-size: cover;
-   background-position: center;
-   padding: 1.5em;
-  }
 }
 
-section {
+.clicked-image {
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
   border-radius: 10px;
-}
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  padding: 1.5em;
+  text-align: left;
+  width: 70%;
+
+  .movie-stats {
+    background-color: rgba(0, 0, 0, .75);
+    border-radius: 10px;
+    box-shadow: 0 10px 9px -9px rgba(0, 0, 0, .8);
+    min-height: fit-content;
+    padding: 1em;
+    width: 95%;
+    
+    h3 {
+      font-size: 2.2em;
+      margin-bottom: .4em;
+    }
+  
+    p {
+      padding: .2em 0;
+    }
+  }
+ }
 
 a {
   height: fit-content;
-  position: relative;
   margin-right: 1.2em;
-}
 
-button {
-  font-family: 'Comfortaa', Arial, cursive;
-  height: fit-content;
-  font-size: 3.5em;
-  background-color: transparent;
-  border: 0;
-  color: #fff;
-  transition: transform 100ms ease-in-out;
-
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.2);
-  }
-}
-
-h3 {
-  font-size: 2.2em;
-  margin-bottom: .4em;
-}
-
-.movie-stats {
-  background-color: black;
-  min-height: fit-content;
-  width: 30%;
-  padding: 1em;
-  border-radius: 10px;
-  box-shadow: 0 10px 9px -9px rgba(0, 0, 0, .8);
-
-
-  p {
-    padding: .2em 0;
+  button {
+    background-color: transparent;
+    color: $text-color;
+    font-family: $font;
+    font-size: 3.5em;
+    transition: transform 100ms ease-in-out;
+  
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+    }
   }
 }

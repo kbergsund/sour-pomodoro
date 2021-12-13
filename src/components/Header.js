@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <header>
-      <Link style={{textDecoration: "none", color:"white"}} to="/">
+      <Link className='header-link'
+      to="/">
       <h1>sour pomodoro</h1>
       </Link>
     </header>

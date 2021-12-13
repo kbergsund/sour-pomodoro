@@ -1,3 +1,18 @@
-// .sort-container{
-//   border: 3 px solid blue;
-// }
+@import 'variables';
+
+select {
+  background: transparent;
+  border-radius: 7px;
+  box-shadow: 0 5px 8px -3px rgba(235, 235, 235, 0.5);
+  color: $text-color;
+  font-family:$font;
+  font-size: .9em;
+  height: 3em;
+  margin-bottom: 2em;
+  padding: 2px;
+  width: 25%;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

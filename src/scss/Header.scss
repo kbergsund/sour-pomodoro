@@ -9,6 +9,11 @@ header {
   align-items: flex-end;
 }
 
+.header-link {
+  text-decoration: none;
+  color: rgb(235, 235, 235);
+}
+
 h1 {
   height: fit-content;
   margin: 0 0 .2em .7em;

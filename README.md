@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# sour pomodoro
+## It's Definitely Not Rotten Tomatoes...
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Turing School of Software & Design
 
-## Available Scripts
+2108 Front-End Engineering, Mod 3 - React Pair Project
 
-In the project directory, you can run:
+## Abstract
+sour pomodoro is a one-stop shop for some of the worst movies from the past couple of years. The homepage provides a quick view of each movie, with a star-rating visual above the poster. Choose to sort by a number of metrics: by rating, release year, or alphabetically. Clicking any of the poster redirects you to a unique URL that provides additional data, from budget/revenue numbers, if available, to a numerical rating. 
 
-### `npm start`
+## Languages/Technology
+React, React Router, Javascript, HTML, Sass, Cypress
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Learning Goals
+Gain competency with React 
+Create a multi-page UX using Router
+Test React components & asynchronous JS using E2E testing
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Install & Setup
+1. Clone this down
+2. `cd` into the directory
+3. Run `npm install` and then `npm start`
+5. Head to `localhost:3000` in your browser  
 
-### `npm test`
+## Web App Attributes 
+1. On load, users see a grid of movie posters. A corresponding star-rating visual is underneath. Posters scale slightly on hover.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. In the upper right is a sort dropdown with a variety of sort options. The grid re-renders when a user makes their selection.
 
-### `npm run build`
+3. Clicking on a movie poster redirects users to a unique URL. Here they can see a backdrop image from the movie and additional data. Clicking the 'X' in the upper left takes them back to the homepage.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. If, at any point, a user tries to input their own invalid URL, they see an error page that gives them the option to go back to the homepage.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. There is also error handling in place for a 500-level internal server error.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Future Directions
+1. Add a search bar to the homepage (search by title)
+2. Impliment filtering by genre
+3. Add more data
 
-### `npm run eject`
+## Project Spec & Rubric
+[Here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributors
+[Kyra Bergsund](https://github.com/kbergsund)
+[Regan Losey](https://github.com/reganlosey)

@@ -1,6 +1,8 @@
 @import 'variables';
+@import 'mixins';
 
 .clicked-movie {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -36,7 +38,7 @@
   }
  }
 
-a {
+.x-button {
   height: fit-content;
   margin-right: 1.2em;
 
@@ -45,11 +47,10 @@ a {
     color: $text-color;
     font-family: $font;
     font-size: 3.5em;
-    transition: transform 100ms ease-in-out;
+    @include hover-scale(1.2);
   
     &:hover {
       cursor: pointer;
-      transform: scale(1.2);
     }
   }
 }

@@ -1,18 +1,19 @@
+@import 'mixins';
+
 article {
   text-align: center;
   
   .poster {
     height: 300px;
-    transition: transform 100ms ease-in-out;
     border-radius: 7px;
     margin-bottom: .7em;
+    @include hover-scale(1.05);
   
     &:hover {
       cursor: pointer;
-      transform: scale(1.05);
     }
   }
-  
+
   svg {
     width: 1.3em;
   }

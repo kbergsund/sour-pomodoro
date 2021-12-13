@@ -60,7 +60,9 @@ class ClickedMovie extends React.Component {
     return (
       <article className="clicked-movie">
         {this.state.currentMovie &&
-          <Link to='/'>
+          <Link 
+          className='x-button'
+          to='/'>
             <button type="button">x</button>
           </Link>}
         {displayCurrentMovie}

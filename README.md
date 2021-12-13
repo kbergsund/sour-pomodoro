@@ -42,31 +42,31 @@ Or:
 
  - On load, users see a grid of movie posters. A corresponding star-rating visual is underneath. Posters scale slightly on hover.
   
-<img src="https://user-images.githubusercontent.com/82983696/145870321-ae76b835-8c1c-4e2c-961e-88e29d009c75.gif"  width="1052" >
+<img src="https://user-images.githubusercontent.com/82983696/145870321-ae76b835-8c1c-4e2c-961e-88e29d009c75.gif"  width="800">
 
 <br>
 
 - In the upper right is a sort dropdown with a variety of sort options. The grid re-renders when a user makes their selection.
   
-<img src="https://user-images.githubusercontent.com/82983696/145870313-0b086d7f-eb09-4eca-a5d2-2d0af71f85b0.gif" width="1052">
+<img src="https://user-images.githubusercontent.com/82983696/145870313-0b086d7f-eb09-4eca-a5d2-2d0af71f85b0.gif" width="800">
 
 <br>
 
 - Clicking on a movie poster redirects users to a unique URL. Here they can see a backdrop image from the movie and additional data. Clicking the 'X' in the upper left takes them back to the homepage.
   
-<img src="https://user-images.githubusercontent.com/82983696/145870303-24d48d03-569a-495f-9159-ca36e3f4f71e.gif" width="1052">
+<img src="https://user-images.githubusercontent.com/82983696/145870303-24d48d03-569a-495f-9159-ca36e3f4f71e.gif" width="800">
 
 <br>
 
 - If, at any point, a user tries to input their own invalid URL, they see an error page that gives them the option to go back to the homepage.
 
-<img src="https://user-images.githubusercontent.com/82983696/145871548-2fabfc76-8cc5-4005-912c-272a8b7fff53.gif" width="1052">
+<img src="https://user-images.githubusercontent.com/82983696/145871548-2fabfc76-8cc5-4005-912c-272a8b7fff53.gif" width="800">
 
 <br>
 
 ## Future Directions
-1. Add a search bar to the homepage (search by title)
-2. Impliment filtering by genre
+1. Add a search bar to the homepage to search by title
+2. Implement filtering by genre
 3. Add more data
 
 

@@ -64,3 +64,12 @@
     word-break: break-all;
   }
 }
+@media screen and (max-width: 455px){
+  header{
+    border: 2px solid green;
+    width: fit-content;
+  }
+  .movie-container{
+    width: fit-content;
+  }
+}

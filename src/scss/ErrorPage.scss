@@ -18,7 +18,7 @@ h2 {
   margin-bottom: 1.5em;
 }
 
-.error-link{
+.error-link {
   color: #b73203;
   padding: .5em;
   border-radius: 7px;
@@ -26,5 +26,18 @@ h2 {
 
   &:hover {
     border: 1px solid #b73203;
+  }
+}
+
+@media screen and (max-width: 788px) {
+  .error-container {
+    border: 3px solid white;
+    background-position-y: -155px;
+    ;
+  }
+
+  main {
+    border: 3px solid yellow;
+    padding: 0 3.5em 0 3.5em;
   }
 }

@@ -1,12 +1,12 @@
 describe('Errors', () => {
   it('should handle invalid URL errors', () => {
-    cy.visit('http://localhost:3000/banana')
+    cy.visit('http://localhost:3000/#/banana')
       .get('.movie-container')
       .get('.error-container').children()
       .contains('h2', '404-Invalid URL')
       .next().contains('p', 'Whoa...kinda spooky in here')
       .next().contains('a', 'Get me outta here!')
-    cy.visit('http://localhost:3000/movies/banana')
+    cy.visit('http://localhost:3000/#/movies/banana')
       .get('.movie-container')
       .get('.error-container').children()
       .contains('h2', '404-Invalid URL')
